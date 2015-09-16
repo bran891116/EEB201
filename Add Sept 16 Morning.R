@@ -157,3 +157,29 @@ plot(1:(ttmax+1), NNmatrix, xlab="time", ylab="N", type="b", col='blue')
 
 # 3.2.1 *Mini-exercise
 
+RR <- 0.95
+
+#Changing the value of RR easily made the pop decline
+
+for (tt in 1:ttmax) {
+  NNmatrix[tt+1] <- RR*NNmatrix[tt]
+}
+
+# the Qualitative behaviour of the model does not depend on NN
+# RR is what makes it incline or decline
+
+plot(1:(ttmax+1), NNmatrix, xlab="time", ylab="N", type="b", col='blue')
+
+# 3.2.2 Excersise
+
+geometricGrowthFun <- function(NN, RR, ttmax) {
+  NNmatrix <- matrix(NA, nrow= 1, ncol= ttmax+1)
+  NNmatrix [1] <- NN
+  for (tt in 1:ttmax) {
+    NNmatrix[tt+1] <- RR*NNmatrix[tt]
+  }
+    plot(1:(ttmax+1), NNmatrix, xlab="time", ylab="N", type="b", col='blue')
+  
+}
+
+geometricGrowthFun(NN=10, RR=0.95, ttmax=80)
