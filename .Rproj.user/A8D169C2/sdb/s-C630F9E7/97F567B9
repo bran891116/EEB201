@@ -1,0 +1,18 @@
+{
+    "contents" : "getwd()\nsetwd(\"/Users/brandonmacdonald/GitHub/EEB201/data files\")\n\n\n# trying in class excersises\n\ncat(\"hello world\")\nhistory()\n\ntips <- c(\"learn R\", \"love R\")\ntips\n\n# ls() can be used so you can remember what you called something. \n# it lists what you've assigned variables to\n\nls()\nrm(list = ls(tips))\n\nsource(\"/Users/brandonmacdonald/GitHub/EEB201/data files/source.example.R\")\n\nall.I.know.about.life.I.learned.in.grad.school\nall.I.know.about.life.I.learned.in.grad.school <- (\"example function\")\nall.I.know.about.life.I.learned.in.grad.school()\n\"example function\"\n\ntt <- read.tree(\"tree.tre\")\ntt\ndd <- read.table(\"data.txt\")\ndd\ndd <- read.table(\"data.txt\", header = T, as.is = T, sep = \"\\t\")\ndd\n# as.is tells R to leave the information as it is, so it will keep\n# character strings as characters instead to changing them into \n# factors, or tagging them as other kinds of data that could stop\n# you from doing what you want to do\n\ndim(dd)\n#this told me the number of rows and columns\ndflength <- dim(dd)[1]\ndflength\n\n?runif\n#random uniform\n\nsize <- runif(92)\n#this would be for adding another column to the data frame, with 92 \n# roms deep, but if we add more rows or take away it won't work so...\nsize <- runif(dflength)\nsize\n\ndd <- cbind(dd, size)\ndd\n# something about the cbind made R remember to include size in the dd\n\n# == is a true or false questions to R\n\n# \\ means a new line\n\n# For Loops\nfor (ii in 1:5) {cat(\"\\nthe number is\", ii)}\nfor(animal in notfish){cat(animal, \"fish\\n\", sep=\"\")}\nnotfish <- c(\"elephant\")\n#by default cat will put a space between those two words, so we put\n# sep=\"\" to set the seperation to no space\n\nfor(animal in notfish){cat(animal, \"fish\", \" are tasty\\n\", sep=\"\")}\n\n# WHILE STATEMENTS\n#while (SOME CONDITION is TRUE){ do something }\n\nxx<-1\nwhile(xx < 10) {\n  xx <- xx+1;\n  if (xx == 7) {\n    cat(\" lucky number \", xx, \"\\n\") }\n  else {\n    cat(\"not excited about the number \", xx, \"\\n\")\n  }}\nprint(xx)\n\nwhile(xx < 5) {\n  xx <- xx+1; \n  if (xx == 3) {\n    break; }\n}\nprint(xx)\n",
+    "created" : 1442423743279.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2724840735",
+    "id" : "97F567B9",
+    "lastKnownWriteTime" : 1442434324,
+    "path" : "~/GitHub/EEB201/Add Sept 16 Morning.R",
+    "project_path" : "Add Sept 16 Morning.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
