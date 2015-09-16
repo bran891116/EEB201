@@ -84,3 +84,76 @@ while(xx < 5) {
     break; }
 }
 print(xx)
+
+# LOGIC ARGUEMENTS
+
+# | this is an or symbol
+# & this works as an and in a logical statement
+# ! this is NOT
+
+# LOOPS
+
+# for loops, uses a loop a fixed number of times
+# go through the loop once for each value
+# used the most
+
+# use double letters for variables so they're easier to find
+# and replace
+
+#Calculate the numbers of all numbers from 1 to 20
+
+sum(1:20)
+
+# set values
+RR <- 1.05
+NN <- 100
+
+#loop over 10 years
+for(year in 1:10) {
+  NN <- NN * RR
+}
+cat(NN)
+
+?plot
+
+# N is a STATE VARIABLE meaning it describes the state of the system
+# R is a PERAMETER which describes how the processes are proceeding,
+# of they are the rules to how things are changing
+
+# character string followed by round brackets indicate to R that
+# you want it to do a function
+# character string followed by square brackets indicate indexing
+
+#Bonus question make the code spit out the NN values for all of the
+# years, 1 through 10
+
+#need to make a vector to hold all of the values of NN, fill it with
+  #NA values, and set the first on to 100
+
+# set initial conditions and perameter values
+NN <- 100
+RR <- 1.05
+ttmax <- 10
+
+# initialize variable to a vector of NA values
+# So I'm going to create a matrix that has all of my NN values
+NNmatrix <- matrix(NA, nrow= 1, ncol= ttmax+1)
+# I set my matrix called NNmatrix using the matrix function(NA refers
+# to the data points that are going to be filled in with NA, row, 
+# column *** ncol is set to TTmax+1 because we are starting at year
+# 0 so there will actually be 11 NN values)
+
+NNmatrix [1] <- NN
+# now I've set the starting point to NN or 100. This is actually our
+# year 0
+
+#Now loop over the Tmax timesteps
+for (tt in 1:ttmax) {
+ NNmatrix[tt+1] <- RR*NNmatrix[tt]
+ }
+
+#plot the results
+plot(1:(ttmax+1), NNmatrix, xlab="time", ylab="N", type="b", col='blue')
+
+# 3.2.1 *Mini-exercise
+
